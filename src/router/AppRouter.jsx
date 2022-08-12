@@ -1,7 +1,7 @@
 import React from 'react'
 import About from '../pages/About'
 import Home from '../pages/Home'
-import SingleCoktail from '../pages/SingleCoktail'
+import SingleCocktail from '../pages/SingleCocktail'
 import Error from '../pages/Error'
 import { BrowserRouter, Routes , Route } from 'react-router-dom'
 import Navbar from '../components/Navbar'
@@ -16,7 +16,7 @@ const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
-                <Route path="/cocktail/:id" element={<SingleCoktail/>} />
+                <Route path="/cocktail/:id" element={<SingleCocktail/>} />
                 <Route path="*" element={<Error/>} />
 
 

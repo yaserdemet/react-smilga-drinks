@@ -24,7 +24,7 @@ const CocktailList = () => {
       {cocktails.map((item) => {
         return <Cocktail key={item.id} {...item} />;
       })}
-      //* datayı import et daha sonra bir componente maple maplediğin yerde baska bir componente prop olarak gönder. ister destruc et veya orda et.
+      {/* //* datayı import et daha sonra bir componente maple maplediğin yerde baska bir componente prop olarak gönder. ister destruc et veya orda et. */}
 
     </div>
   </section>;
