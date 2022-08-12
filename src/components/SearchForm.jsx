@@ -1,14 +1,15 @@
 import React from 'react'
 import { useGlobalContext } from '../context/ContextApi'
+import {useRef, useEffect} from 'react'
 export default function SearchForm() {
   const { setSearchTerm } = useGlobalContext()
-  const searchValue = React.useRef('')
+  const searchValue = useRef()
 
-  React.useEffect(() => {
+  useEffect(() => {
     searchValue.current.focus()
   }, [])
 
-  function searchCocktail() {
+  function searchCocktail(e) {
     setSearchTerm(searchValue.current.value)
   }
   function handleSubmit(e) {
