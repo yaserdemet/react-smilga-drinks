@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## useRef Hook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- First Usage : To Access DOM ELEMENTS
 
-## Available Scripts
+```
+    const myRef = useRef(initialValue)
+    useEffect(() => {
+        myRef.current.focus()
+    }, [])
 
-In the project directory, you can run:
+    <input ref={myRef} type="text" />
 
-### `yarn start`
+useRef ile olusturulan objeler referansı değişmez. Component render olsa bile hafızadaki yeri hiç bir zaman değişmez. Objeler her render da yeniden olusturulur. Ve referansı değişir. Fakat bu durum performans kaybına neden olabilir. useRef ile tanımlanan obje render olmaz. UI da anlık yanstımaya gerek yoksa useRef kullanılabilir
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+Anlık bir validationa gerek yoksa useRef in current ın value su ile alınabilir. Gereksiz renderları önler.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Second Usage : 
 
-### `yarn test`
+```
+    const inputRef = useRef()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    const handleClick = () => {
 
-### `yarn build`
+        setSearch(inputRef.current.value)
+    }
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    <input ref={inputRef} type="search" >
+    <button onClikc={handleClick}>  Search User </button>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ReactMemo Build In Structure:
 
-### `yarn eject`
+```
+Bir componentin içinde başka bir child component çağırdığımızı varsayalım. Parent component render olduğunda child componentte herhangi bir değişiklik olmamasına rağmen yinede render olacaktır.  Bu performans kaybına sebep olacaktır.
+Bunu engellemek için render olmasını engellemek istediğimiz componenti ReactMemo ile wraplamamız gerekmektedir. Çalışma mantığı ise componenti hafızaya alıyor. Render da location ı değişmiyor.
+Fakat ilgili child componente props ile bir değer gönderildiğnde React.memo ile sarılsa bile render olur.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Kullanım : 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+const Header = React.memo( () => {
+    return (
+        <img src ={x} alt = "abc" >
+    )
+}
+)
+export default Header
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Kullanım (Best Practice): 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+import {memo} from "react";
 
-## Learn More
+export default memo(Header)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

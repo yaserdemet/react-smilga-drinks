@@ -4,15 +4,19 @@ import { useCallback } from 'react'
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 
-export const AppContext = createContext()
+export const AppContext = createContext()  // ?  createContext ile bir context oluşturduk.
 export const useGlobalContext = () => {
-    return useContext(AppContext)
+
+  // ? burada custom hook yazdık. useContextin içine create contexti attık. 
+  // * sadece useGlobalContext çağırmak yeterli olacaktır.
+
+    return useContext(AppContext) 
 }
 
 const ContextApi = ({children}) => {
 
   const [loading, setLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState('a')
+  const [searchTerm, setSearchTerm] = useState('b')
   const [cocktails, setCocktails] = useState([])
 
   const fetchDrinks = useCallback( async () => {

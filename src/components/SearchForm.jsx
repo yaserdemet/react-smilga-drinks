@@ -11,6 +11,7 @@ export default function SearchForm() {
 
   function searchCocktail(e) {
     setSearchTerm(searchValue.current.value)
+    //  ?  bu kullanım onChange göre daha performanslı bir kullanım. Sadece son değişikliği alıyor
   }
   function handleSubmit(e) {
     e.preventDefault()
@@ -25,6 +26,8 @@ export default function SearchForm() {
             name='name'
             id='name'
             ref={searchValue}
+            // *  bu kullanım onChange göre daha performanslı bir kullanım. Sadece son değişikliği alıyor
+
             onChange={searchCocktail}
           />
         </div>
