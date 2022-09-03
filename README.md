@@ -1,3 +1,33 @@
+## Problem Statement
+
+- This project aims to create Drinks Page with React and pure Css
+
+
+### In this project i have used;
+
+✅ Props and State Logic
+
+✅ Resuable Components
+
+✅ React Router Dom
+
+✅ State Management with Context Api
+
+✅ Conditional Rendering
+
+✅ Async Await Function
+
+✅ React Hooks (useState, useEffect, useRef, useNavigate, useParams ReactMemo)
+
+✅ React AutoAnimate
+
+✅ Hide apiKeys in .evn file
+
+✅ Deployment with Vercel and Netlify
+
+
+
+
 ## useRef Hook
 
 - First Usage : To Access DOM ELEMENTS
