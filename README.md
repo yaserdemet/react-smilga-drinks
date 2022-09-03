@@ -2,7 +2,7 @@
 ![Animation](https://user-images.githubusercontent.com/99739515/188268371-24b566f6-e70d-4bb4-ae3d-d7dce37dd472.gif)
 
 #### This project aims to create Drinks Page with React and pure Css
-
+[🍹click here to see page](https://react-smilga-drinks.vercel.app)
 
 ### In this project i have used;
 
