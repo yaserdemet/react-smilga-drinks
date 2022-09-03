@@ -1,6 +1,7 @@
-## Problem Statement
+#### React Multi Page 
+![Animation](https://user-images.githubusercontent.com/99739515/188268371-24b566f6-e70d-4bb4-ae3d-d7dce37dd472.gif)
 
-- This project aims to create Drinks Page with React and pure Css
+#### This project aims to create Drinks Page with React and pure Css
 
 
 ### In this project i have used;
@@ -19,13 +20,18 @@
 
 ✅ React Hooks (useState, useEffect, useRef, useNavigate, useParams ReactMemo)
 
+✅ Custom Hook
+
 ✅ React AutoAnimate
 
 ✅ Hide apiKeys in .evn file
 
 ✅ Deployment with Vercel and Netlify
 
-
+### apiAdress
+`
+https://www.thecocktaildb.com/api/json/v1/1/search.php?s=
+`
 
 
 ## useRef Hook
@@ -40,7 +46,9 @@
 
     <input ref={myRef} type="text" />
 
-useRef ile olusturulan objeler referansı değişmez. Component render olsa bile hafızadaki yeri hiç bir zaman değişmez. Objeler her render da yeniden olusturulur. Ve referansı değişir. Fakat bu durum performans kaybına neden olabilir. useRef ile tanımlanan obje render olmaz. UI da anlık yanstımaya gerek yoksa useRef kullanılabilir
+useRef ile olusturulan objeler referansı değişmez. Component render olsa bile hafızadaki yeri hiç bir zaman değişmez.
+Objeler her render da yeniden olusturulur. Ve referansı değişir. Fakat bu durum performans kaybına neden olabilir.
+useRef ile tanımlanan obje render olmaz. UI da anlık yanstımaya gerek yoksa useRef kullanılabilir
 
 ```
 Anlık bir validationa gerek yoksa useRef in current ın value su ile alınabilir. Gereksiz renderları önler.
